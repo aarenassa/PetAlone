@@ -7,105 +7,30 @@ import java.util.Objects;
 @Entity
 @Table(name = "motion_sensor", schema = "public", catalog = "petalone1")
 public class MotionSensor {
-    private String idSensor;
-    private String name;
-    private String messagge;
-    private String numSerial;
-    private String addressUbication;
-    private String locatedAt;
-    private String numActivity;
-    private Date dateActivity;
 
     @Id
     @Column(name = "id_sensor", nullable = false, length = 5)
-    public String getIdSensor() {
-        return idSensor;
-    }
-
-    public void setIdSensor(String idSensor) {
-        this.idSensor = idSensor;
-    }
-
+    private String idSensor;
     @Basic
     @Column(name = "name", nullable = true, length = 15)
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    private String name;
     @Basic
     @Column(name = "messagge", nullable = true, length = 30)
-    public String getMessagge() {
-        return messagge;
-    }
-
-    public void setMessagge(String messagge) {
-        this.messagge = messagge;
-    }
-
+    private String messagge;
     @Basic
     @Column(name = "num_serial", nullable = true, length = 5)
-    public String getNumSerial() {
-        return numSerial;
-    }
-
-    public void setNumSerial(String numSerial) {
-        this.numSerial = numSerial;
-    }
-
+    private String numSerial;
     @Basic
     @Column(name = "address_ubication", nullable = true, length = 15)
-    public String getAddressUbication() {
-        return addressUbication;
-    }
-
-    public void setAddressUbication(String addressUbication) {
-        this.addressUbication = addressUbication;
-    }
-
+    private String addressUbication;
     @Basic
     @Column(name = "located_at", nullable = true, length = 15)
-    public String getLocatedAt() {
-        return locatedAt;
-    }
-
-    public void setLocatedAt(String locatedAt) {
-        this.locatedAt = locatedAt;
-    }
-
+    private String locatedAt;
     @Basic
     @Column(name = "num_activity", nullable = true, length = 5)
-    public String getNumActivity() {
-        return numActivity;
-    }
-
-    public void setNumActivity(String numActivity) {
-        this.numActivity = numActivity;
-    }
-
+    private String numActivity;
     @Basic
     @Column(name = "date_activity", nullable = true)
-    public Date getDateActivity() {
-        return dateActivity;
-    }
+    private Date dateActivity;
 
-    public void setDateActivity(Date dateActivity) {
-        this.dateActivity = dateActivity;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        MotionSensor that = (MotionSensor) o;
-        return Objects.equals(idSensor, that.idSensor) && Objects.equals(name, that.name) && Objects.equals(messagge, that.messagge) && Objects.equals(numSerial, that.numSerial) && Objects.equals(addressUbication, that.addressUbication) && Objects.equals(locatedAt, that.locatedAt) && Objects.equals(numActivity, that.numActivity) && Objects.equals(dateActivity, that.dateActivity);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idSensor, name, messagge, numSerial, addressUbication, locatedAt, numActivity, dateActivity);
-    }
 }
