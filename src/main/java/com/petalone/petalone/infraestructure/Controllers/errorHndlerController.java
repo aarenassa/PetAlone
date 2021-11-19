@@ -1,5 +1,6 @@
 package com.petalone.petalone.infraestructure.Controllers;
 
+import com.petalone.petalone.exeption.PetalonException;
 import com.petalone.petalone.infraestructure.Controllers.dto.ErrorDTO;
 import com.petalone.petalone.infraestructure.Controllers.dto.ResponseDTO;
 import org.springframework.http.HttpStatus;
@@ -24,5 +25,12 @@ public class errorHndlerController {
         String message = "Algunos campos son inválidos o faltantes, por favor corrija los errores y vuelva a intentarlo";
         ResponseDTO response = new ResponseDTO( message,null , listErrors);
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(PetalonException.class)
+    protected ResponseEntity<?> handle(PetalonException ex)
+    {
+        ResponseDTO response = new ResponseDTO( ex.getMessage(),null , null);
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
 }

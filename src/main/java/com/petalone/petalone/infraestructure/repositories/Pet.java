@@ -25,13 +25,13 @@ public class Pet {
     @Column(name = "id_pet", nullable = false)
     private String idPet;
     @Basic
-    @Column(name = "name", nullable = true, length = 20)
+    @Column(name = "name", nullable = true)
     private String name;
     @Basic
     @Column(name = "age", nullable = true)
     private Short age;
     @Basic
-    @Column(name = "pet_type", nullable = true, length = 20)
+    @Column(name = "pet_type", nullable = true)
     private String petType;
 
     public Pet(PetDTO petDTO) {

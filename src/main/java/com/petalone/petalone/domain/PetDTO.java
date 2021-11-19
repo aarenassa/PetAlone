@@ -18,11 +18,13 @@ public class PetDTO {
     @NotEmpty
     @Size(min = 2,max =20)
     private String name;
+    private String id_pet;
     @NotNull
     @Positive
     private short age;
     private String petType;
-    private String idPet;
+
+
 
 
 }

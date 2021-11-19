@@ -1,4 +1,6 @@
 package com.petalone.petalone.infraestructure.repositories;
 
-public interface PetUbicationRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PetUbicationRepository extends JpaRepository<PetUbication, String> {
 }

@@ -6,16 +6,15 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
+import javax.persistence.Id;
+import java.sql.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PetUbicationDTO {
+public class NotificationDTO {
 
-
-    private String idUbication;
-    private String numIdentification; //propietario
-    private String nameUbication;
-    private String address;
-    private String numPhone;
+     private String idNotification;
+     private String name;
+     private String typeNotification;
 }

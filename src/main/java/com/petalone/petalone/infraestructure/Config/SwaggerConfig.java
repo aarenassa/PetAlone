@@ -1,5 +1,6 @@
 package com.petalone.petalone.infraestructure.Config;
 
+import com.petalone.petalone.infraestructure.Controllers.PetController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.PathSelectors;
@@ -20,8 +21,9 @@ public class SwaggerConfig {
     @Bean
     public Docket apiDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("PetController")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.codmind.swaggerapi.controllers"))
+                .apis(RequestHandlerSelectors.basePackage("com.petalone.petalone.infraestructure.Controllers"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(getApiInfo())
